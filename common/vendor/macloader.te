@@ -38,3 +38,6 @@ allow macloader sysfs_wifi_writable:file rw_file_perms;
 # /sys/wifi
 allow macloader sysfs_wifi:dir r_dir_perms;
 allow macloader sysfs_wifi:file r_file_perms;
+
+# macloader programs the Wi-Fi MAC: needs raw socket + chown
+allow macloader self:capability { net_raw chown };
